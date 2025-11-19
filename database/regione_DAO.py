@@ -17,7 +17,10 @@ class RegioneDAO:
             return None
 
         cursor = cnx.cursor(dictionary=True)
-        query = """ ADD YOUR QUERY """ # TODO
+
+        #QUERY SVOLTA
+        query = """ SELECT id, nome
+                    FROM regione"""
         try:
             cursor.execute(query)
             for row in cursor:

@@ -17,7 +17,10 @@ class AttrazioneDAO:
             return None
 
         cursor = cnx.cursor(dictionary=True)
-        query = """ ADD YOUR QUERY """ # TODO
+
+        #QUERY SVOLTA
+        query = """ SELECT id, nome, valore_culturale
+                    FROM attrazione"""
         try:
             cursor.execute(query)
             for row in cursor:
