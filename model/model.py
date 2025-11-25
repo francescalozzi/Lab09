@@ -116,7 +116,7 @@ class Model:
             #vincolo sul costo
 
             if max_budget is not None:
-                if costo_corrente + tour.costo_corrente > max_budget:
+                if costo_corrente + float(tour.costo) > max_budget:
                     continue
 
             #vincolo affinchè le attrazioni siano uniche
@@ -138,7 +138,7 @@ class Model:
 
             #RICORSIONE
             self._ricorsione(i+1,pacchetto_parziale,durata_corrente + tour.durata_giorni,
-                             costo_corrente + tour.costo, nuovo_valore,nuove_attrazioni,
+                             costo_corrente + float(tour.costo), nuovo_valore,nuove_attrazioni,
                              lista_tour, max_giorni, max_budget)
 
             #backtracking
